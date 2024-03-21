@@ -24,4 +24,7 @@ include(":app")
 include(":core")
 include(":data")
 include(":domain")
+include(":features:feature_city_input")
+include(":features:feature_current_weather")
+include(":features:feature_7_day_forecast")
  
