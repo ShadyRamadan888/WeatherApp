@@ -8,6 +8,15 @@ espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.7.0"
 composeBom = "2023.08.00"
+appcompat = "1.6.1"
+material = "1.10.0"
+dagger-hilt = "2.47"
+hilt-navigation-compose = "1.2.0"
+lifecycle = "2.7.0"
+retrofit = "2.9.0"
+coroutines = "1.7.3"
+kotlinx-serialization-json = "1.6.0"
+navigation = "2.7.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -16,6 +25,7 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
@@ -24,8 +34,39 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+hilt = {module = "com.google.dagger:hilt-android", version.ref = "dagger-hilt"}
+hilt-navigation = {module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose"}
+lifecycle-viewmodel-compose = {module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle"}
+lifecycle-viewmodel-ktx = {module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle"}
+retrofit = {module = "com.squareup.retrofit2:retrofit", version.ref ="retrofit"}
+gson = {module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit"}
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 
+
+[bundles]
+compose =[
+    "androidx-activity-compose",
+    "androidx-compose-bom",
+    "androidx-ui-tooling",
+    "androidx-ui-tooling-preview",
+    "androidx-ui-graphics",
+    "lifecycle-viewmodel-compose",
+    "androidx-ui-test-manifest",
+    "androidx-ui-test-junit4",
+    "androidx-material3",
+    "androidx-ui",
+    "androidx-junit",
+    "junit",
+    "androidx-espresso-core",
+    "lifecycle-viewmodel-ktx",
+    "compose-navigation"
+]
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 
