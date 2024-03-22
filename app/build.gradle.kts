@@ -60,6 +60,7 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     implementation(libs.hilt)
     implementation(project(":data"))
+    implementation(project(":domain"))
     kapt(libs.hilt.compiler)
 }
 kapt {
