@@ -1,12 +1,12 @@
 package com.weather.domain.usecases.input_city_usecase
 
-import com.weather.data.repo.WeatherRepo
+import com.weather.data.local.SharedPreferenceManager
 import javax.inject.Inject
 
 class InputCityUseCase @Inject constructor(
-    private val repo: WeatherRepo
-): IInputCityUseCase {
+    private val sharedPreferenceManager: SharedPreferenceManager
+) : IInputCityUseCase {
     override fun invoke(city: String) {
-        TODO("Not yet implemented")
+        sharedPreferenceManager.setCityName(city)
     }
 }

@@ -1,6 +1,6 @@
 package com.weather.domain.di
 
-import com.weather.data.repo.WeatherRepo
+import com.weather.data.local.SharedPreferenceManager
 import com.weather.domain.usecases.input_city_usecase.IInputCityUseCase
 import com.weather.domain.usecases.input_city_usecase.InputCityUseCase
 import dagger.Module
@@ -13,7 +13,7 @@ import dagger.hilt.components.SingletonComponent
 object UseCasesModule {
 
     @Provides
-    fun provideInputCityUseCase(repo: WeatherRepo): IInputCityUseCase {
-        return InputCityUseCase(repo)
+    fun provideInputCityUseCase(sharedPreferenceManager: SharedPreferenceManager): IInputCityUseCase {
+        return InputCityUseCase(sharedPreferenceManager)
     }
 }
