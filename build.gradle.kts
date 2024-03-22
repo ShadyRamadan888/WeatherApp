@@ -3,6 +3,15 @@ plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.androidLibrary) apply false
-    id ("org.jetbrains.kotlin.plugin.serialization") version "1.8.10" apply false
-
+    alias(libs.plugins.kotlinSerialization) apply false
+    alias(libs.plugins.hiltAndroid) apply false
+}
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.44")
+    }
 }
