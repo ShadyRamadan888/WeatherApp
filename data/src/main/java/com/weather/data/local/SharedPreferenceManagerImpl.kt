@@ -8,17 +8,17 @@ class SharedPreferenceManagerImpl @Inject constructor(
     private val sharedPreferences: SharedPreferences
 ) : SharedPreferenceManager {
 
-    override suspend fun setCityName(city: String) {
+    override fun setCityName(city: String) {
         val editor = sharedPreferences.edit()
         editor.apply {
             putString(Constants.CITY_NAME, city)
         }.apply()
     }
 
-    override suspend fun getCityName(): String =
+    override fun getCityName(): String =
         requireNotNull(sharedPreferences.getString(Constants.CITY_NAME, null))
 
-    override suspend fun clearCityName() {
+    override fun clearCityName() {
         val editor = sharedPreferences.edit()
         editor.apply {
             putString(Constants.CITY_NAME, "")
