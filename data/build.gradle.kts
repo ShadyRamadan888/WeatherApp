@@ -44,6 +44,7 @@ dependencies {
     implementation(libs.kotlin.serialization)
     implementation(libs.retrofit)
     implementation(libs.gson)
+    implementation(libs.hilt)
     implementation(libs.kotlinx.coroutines.core)
     implementation(project(":core"))
 }
