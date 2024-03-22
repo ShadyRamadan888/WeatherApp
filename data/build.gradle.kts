@@ -45,4 +45,5 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.gson)
     implementation(libs.kotlinx.coroutines.core)
+    implementation(project(":core"))
 }

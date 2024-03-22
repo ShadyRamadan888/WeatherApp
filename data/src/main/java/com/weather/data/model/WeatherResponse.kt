@@ -34,7 +34,7 @@ data class WeatherResponse(
 )
 
 @Serializable
-data class Forecast7Response(
+data class ForecastResponse(
     @SerialName("cod")
     val cod: String,
     @SerialName("message")
