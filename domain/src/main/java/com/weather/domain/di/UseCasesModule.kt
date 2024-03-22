@@ -6,6 +6,8 @@ import com.weather.domain.usecases.current_waether_usecase.CurrentWeatherUseCase
 import com.weather.domain.usecases.current_waether_usecase.ICurrentWeatherUseCase
 import com.weather.domain.usecases.input_city_usecase.IInputCityUseCase
 import com.weather.domain.usecases.input_city_usecase.InputCityUseCase
+import com.weather.domain.usecases.seven_days_forecast_usecase.ISevenDaysForecastUseCase
+import com.weather.domain.usecases.seven_days_forecast_usecase.SevenDaysForecastUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,6 +28,17 @@ object UseCasesModule {
         repo: WeatherRepo
     ): ICurrentWeatherUseCase {
         return CurrentWeatherUseCase(
+            sharedPreferenceManager = sharedPreferenceManager,
+            repo = repo
+        )
+    }
+
+    @Provides
+    fun provide7DaysForecastUseCase(
+        sharedPreferenceManager: SharedPreferenceManager,
+        repo: WeatherRepo
+    ): ISevenDaysForecastUseCase {
+        return SevenDaysForecastUseCase(
             sharedPreferenceManager = sharedPreferenceManager,
             repo = repo
         )
