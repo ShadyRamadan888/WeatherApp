@@ -42,4 +42,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.kotlin.serialization)
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.kotlinx.coroutines.core)
 }
