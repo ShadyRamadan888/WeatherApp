@@ -2,6 +2,8 @@ package com.weather.data.di
 
 import com.weather.core.utils.Constants
 import com.weather.data.remote.ApiService
+import com.weather.data.repo.WeatherRepo
+import com.weather.data.repo.WeatherRepoImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,4 +25,9 @@ object DataLayerModule {
             .build()
             .create(ApiService::class.java)
     }
+    @Provides
+    fun provideWeatherRepo(apiService: ApiService): WeatherRepo{
+        return WeatherRepoImp(apiService)
+    }
+
 }
