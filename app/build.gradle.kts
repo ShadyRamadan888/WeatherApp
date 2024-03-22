@@ -56,4 +56,5 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
     androidTestImplementation(platform(libs.androidx.compose.bom))
+    implementation(libs.hilt)
 }
