@@ -1,6 +1,5 @@
 package com.weather.data.model
 
-import kotlinx.serialization.Contextual
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -8,7 +7,7 @@ import kotlinx.serialization.Serializable
 data class Weather(
     @SerialName("base")
     val base: String? = null,
-    @Contextual
+    @SerialName("clouds")
     val clouds: Clouds? = null,
     @SerialName("cod")
     val cod: Int? = null,
@@ -18,7 +17,7 @@ data class Weather(
     val dt: Int? = null,
     @SerialName("id")
     val id: Int? = null,
-    @Contextual
+    @SerialName("main")
     val main: Main? = null,
     @SerialName("name")
     val name: String? = null,

@@ -58,6 +58,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":data"))
     implementation(project(":domain"))
+    implementation(project(":features:feature_7_day_forecast"))
 }
 kapt {
     correctErrorTypes = true

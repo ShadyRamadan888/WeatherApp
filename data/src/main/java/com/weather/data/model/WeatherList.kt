@@ -6,21 +6,23 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class WeatherList(
     @SerialName("dt")
-    val dt: Int,
+    val dt: Long,
     @SerialName("main")
     val main: Main,
     @SerialName("weather")
-    val weather: List<Weather>,
+    val weather: List<WeatherX>,
     @SerialName("clouds")
     val clouds: Clouds,
     @SerialName("wind")
     val wind: Wind,
     @SerialName("visibility")
-    val visibility: Int,
+    val visibility: Long,
     @SerialName("pop")
-    val pop: Int,
+    val pop: Double,
     @SerialName("sys")
     val sys: Sys,
     @SerialName("dt_txt")
-    val dtTxt: String
+    val dtTxt: String,
+    @SerialName("rain")
+    val rain: Rain?,
 )

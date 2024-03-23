@@ -17,7 +17,7 @@ interface ApiService {
     @GET("forecast")
     suspend fun getDaysForecast(
         @Query("q") city: String,
+        @Query("cnt") days: Int = 40,
         @Query("appid") apiKey: String = Constants.API_KEY,
-        @Query("cnt") days: String = Constants.SEVEN_DAYS
     ): ForecastResponse
 }

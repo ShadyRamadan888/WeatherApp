@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Clouds(
-    @SerialName("all")
-    val all: Long? = null
+data class Rain(
+    @SerialName("3h")
+    val n3h: Double,
 )

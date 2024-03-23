@@ -36,13 +36,13 @@ data class WeatherResponse(
 @Serializable
 data class ForecastResponse(
     @SerialName("cod")
-    val cod: String,
+    val cod: String? = null,
     @SerialName("message")
-    val message: Int,
+    val message: Long? = null,
     @SerialName("cnt")
-    val cnt: Int,
+    val cnt: Long? = null,
     @SerialName("list")
     val list: List<WeatherList>? = null,
     @SerialName("city")
-    val city: City
+    val city: City? = null
 )
