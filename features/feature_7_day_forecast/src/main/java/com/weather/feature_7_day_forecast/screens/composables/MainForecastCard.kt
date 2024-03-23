@@ -46,7 +46,7 @@ fun MainForecastCard(
                 modifier = Modifier.weight(90f)
             ) {
                 RegularText(
-                    text = dateFormat.format(item.dt),
+                    text = dayFormat.format(item.dt),
                     fontSize = 20.sp
                 )
                 SpacerVertically_20()
