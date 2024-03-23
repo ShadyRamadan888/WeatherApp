@@ -8,10 +8,11 @@ import com.weather.feature_current_weather.navigation.currentWeatherRoute
 
 @Composable
 fun WeatherNavGraph(
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    startDestination: String
 ) {
     NavHost(
-        startDestination = "inputCity",
+        startDestination = startDestination,
         navController = navHostController
     ) {
         inputCityRoute(navHostController)

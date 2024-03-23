@@ -1,6 +1,8 @@
 package com.weather.data.di
 
 import com.weather.core.utils.Constants
+import com.weather.data.helper.LocalCheckHelper
+import com.weather.data.local.SharedPreferenceManager
 import com.weather.data.remote.ApiService
 import com.weather.data.repo.WeatherRepo
 import com.weather.data.repo.WeatherRepoImp
@@ -25,9 +27,15 @@ object DataLayerModule {
             .build()
             .create(ApiService::class.java)
     }
+
     @Provides
-    fun provideWeatherRepo(apiService: ApiService): WeatherRepo{
+    fun provideWeatherRepo(apiService: ApiService): WeatherRepo {
         return WeatherRepoImp(apiService)
+    }
+
+    @Provides
+    fun provideLocalCheckHelper(sharedPreferenceManager: SharedPreferenceManager): LocalCheckHelper {
+        return LocalCheckHelper(sharedPreferenceManager)
     }
 
 }

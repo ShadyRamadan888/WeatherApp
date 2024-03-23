@@ -8,4 +8,6 @@ object Constants {
     const val SEVEN_DAYS = "7"
     const val CITY_NAME = "city"
     const val SHARED_PREFS = "sharedPrefs"
+    const val INPUT_CITY = "inputCity"
+    const val CURRENT_WEATHER = "currentWeather"
 }
