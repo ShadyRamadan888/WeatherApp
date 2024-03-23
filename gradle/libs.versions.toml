@@ -18,6 +18,8 @@ coroutines = "1.7.3"
 kotlinx-serialization-json = "1.6.0"
 navigation = "2.7.7"
 material3Android = "1.2.1"
+coil = "2.5.0"
+alpha = "2.8.0-alpha01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,15 +41,22 @@ material = { group = "com.google.android.material", name = "material", version.r
 hilt = {module = "com.google.dagger:hilt-android", version.ref = "dagger-hilt"}
 hilt-compiler = {module = "com.google.dagger:hilt-android-compiler" , version.ref = "dagger-hilt"}
 hilt-navigation = {module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose"}
-lifecycle-viewmodel-compose = {module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle"}
-lifecycle-viewmodel-ktx = {module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle"}
 retrofit = {module = "com.squareup.retrofit2:retrofit", version.ref ="retrofit"}
 gson = {module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit"}
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
+coil-compose = {module = "io.coil-kt:coil-compose", version.ref = "coil"}
 
+
+androidx-lifecycle-runtimeCompose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "alpha" }
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "alpha" }
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "alpha" }
+lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "alpha" }
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "alpha" }
+lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "alpha" }
+lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "alpha" }
 
 [bundles]
 compose =[
@@ -56,17 +65,25 @@ compose =[
     "androidx-ui-tooling",
     "androidx-ui-tooling-preview",
     "androidx-ui-graphics",
-    "lifecycle-viewmodel-compose",
     "androidx-ui-test-manifest",
     "androidx-ui-test-junit4",
     "androidx-ui",
     "androidx-junit",
     "junit",
     "androidx-espresso-core",
-    "lifecycle-viewmodel-ktx",
     "compose-navigation",
     "androidx-material3-android",
-    "hilt-navigation"
+    "hilt-navigation",
+    "coil-compose"
+]
+lifecycle = [
+    "androidx-lifecycle-runtimeCompose",
+    "lifecycle-viewmodel-compose",
+    "lifecycle-process",
+    "lifecycle-viewmodel",
+    "lifecycle-viewmodel-ktx",
+    "lifecycle-runtime",
+    "lifecycle-viewmodel-savedstate"
 ]
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
