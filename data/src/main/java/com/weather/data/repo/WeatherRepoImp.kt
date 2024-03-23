@@ -1,7 +1,7 @@
 package com.weather.data.repo
 
 import com.weather.data.model.WeatherList
-import com.weather.data.model.WeatherX
+import com.weather.data.model.WeatherResponse
 import com.weather.data.remote.ApiService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -10,8 +10,8 @@ import javax.inject.Inject
 class WeatherRepoImp @Inject constructor(
     private val apiService: ApiService
 ) : WeatherRepo {
-    override fun getCurrentWeather(city: String): Flow<List<WeatherX>> = flow {
-        val response = apiService.getCurrentWeather(city).weather
+    override fun getCurrentWeather(city: String): Flow<WeatherResponse> = flow {
+        val response = apiService.getCurrentWeather(city)
         emit(response)
     }
 
