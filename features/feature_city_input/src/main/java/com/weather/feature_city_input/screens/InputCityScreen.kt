@@ -6,6 +6,7 @@ import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.weather.feature_city_input.screens.composables.InputCityContent
+import com.weather.feature_current_weather.navigation.navigateToCurrentWeather
 
 @Composable
 fun InputCityScreen(
@@ -18,6 +19,7 @@ fun InputCityScreen(
         onCityNameChanged = viewModel::onCityNameChanged,
         onClickButtonSearch = {
             viewModel.onClickSearchButton(state.name)
+            navHostController.navigateToCurrentWeather()
         }
     )
 }
