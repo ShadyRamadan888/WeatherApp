@@ -66,7 +66,7 @@ fun CurrentWeatherContent(
                 SpacerVertically_20()
                 RegularText(
                     modifier = Modifier.align(Alignment.CenterHorizontally),
-                    text = "${(weatherResponse.main!!.temp?.minus(273.15))}°",
+                    text = "${(weatherResponse.main!!.temp!!.toInt().minus(273))}°",
                     fontSize = 80.sp,
                     color = Color.White,
                 )
