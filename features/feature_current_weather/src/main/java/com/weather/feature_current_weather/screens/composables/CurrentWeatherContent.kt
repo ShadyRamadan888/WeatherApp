@@ -12,8 +12,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.weather.core.components.buttons.ButtonToNavigate
 import com.weather.core.components.images.BackgroundImage
 import com.weather.core.components.images.MainAsyncImage
 import com.weather.core.components.progress.CircularIndeterminateProgressBar
@@ -25,7 +27,8 @@ import com.weather.data.model.WeatherUiState
 
 @Composable
 fun CurrentWeatherContent(
-    weatherUiState: WeatherUiState
+    weatherUiState: WeatherUiState,
+    onClickToSevenDayForecast: () -> Unit
 ) {
 
     var isCurrentWeatherLoading by remember { mutableStateOf(true) }
@@ -82,6 +85,11 @@ fun CurrentWeatherContent(
                         .size(200.dp)
                         .align(Alignment.CenterHorizontally),
                     model = "https://openweathermap.org/img/wn/${weatherResponse.weather?.get(0)?.icon}@4x.png"
+                )
+                SpacerVertically_20()
+                ButtonToNavigate(
+                    text = stringResource(com.weather.core.R.string.seven_day_forecast),
+                    onClick = onClickToSevenDayForecast
                 )
             }
         }
