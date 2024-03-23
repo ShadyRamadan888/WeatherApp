@@ -62,6 +62,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":features:feature_city_input"))
+    implementation(project(":features:feature_current_weather"))
     kapt(libs.hilt.compiler)
 }
 kapt {
