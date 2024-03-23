@@ -1,6 +1,7 @@
 package com.weather.data.repo
 
-import com.weather.data.model.WeatherList
+import android.util.Log
+import com.weather.data.model.ForecastResponse
 import com.weather.data.model.WeatherResponse
 import com.weather.data.remote.ApiService
 import kotlinx.coroutines.flow.Flow
@@ -15,8 +16,9 @@ class WeatherRepoImp @Inject constructor(
         emit(response)
     }
 
-    override fun get7DayForecast(city: String): Flow<List<WeatherList>> = flow {
-        val response = apiService.getDaysForecast(city).list
-        emit(requireNotNull(response))
+    override fun get7DayForecast(city: String): Flow<ForecastResponse> = flow {
+        val response = apiService.getDaysForecast(city)
+        Log.v("SHR", response.toString())
+        emit(response)
     }
 }

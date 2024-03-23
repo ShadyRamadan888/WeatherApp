@@ -1,16 +1,15 @@
 package com.weather.data.model
 
-import kotlinx.serialization.Contextual
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class City(
     @SerialName("id")
-    val id: Int,
+    val id: Long,
     @SerialName("name")
     val name: String,
-    @Contextual
+    @SerialName("coord")
     val coord: Coord,
     @SerialName("country")
     val country: String,

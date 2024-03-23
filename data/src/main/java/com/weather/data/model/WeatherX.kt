@@ -10,7 +10,7 @@ data class WeatherX(
     @SerialName("icon")
     val icon: String? = null,
     @SerialName("id")
-    val id: Int? = null,
+    val id: Long? = null,
     @SerialName("main")
     val main: String? = null
 )
