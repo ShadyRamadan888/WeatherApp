@@ -13,5 +13,8 @@ fun CurrentWeatherScreen(
     viewModel: CurrentWeatherViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsState()
-    CurrentWeatherContent(state)
+    CurrentWeatherContent(
+        weatherUiState = state,
+        onClickToSevenDayForecast = {}
+    )
 }
