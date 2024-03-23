@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Discover_text">Discover The Weather In Your City Now!</string>
+    <string name="search_placeholder">Search … </string>
+    <string name="search">Search</string>
+</resources>
