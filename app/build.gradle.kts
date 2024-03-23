@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.hilt)
     implementation(project(":data"))
     implementation(project(":domain"))
+    implementation(project(":features:feature_city_input"))
     kapt(libs.hilt.compiler)
 }
 kapt {
